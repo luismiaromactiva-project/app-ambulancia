@@ -2,26 +2,35 @@ import streamlit as st
 import datetime
 
 # 1. CONFIGURACIÓN DE LA PÁGINA (Para que parezca una app nativa en el móvil)
-st.set_page_config(page_title="App de Revisión Ambulancias", page_icon="🚑", layout="centered")
+st.set_page_config(page_title="App de Nicole de Revisión Ambulancia", page_icon="🚑", layout="centered")
 
-# --- ESTILOS CSS Y OCULTAR MARCAS DE AGUA / GITHUB ---
+# --- ESTILOS CSS: OCULTAR TODO EL RASTRO DE STREAMLIT Y GITHUB ---
 st.markdown("""
     <style>
-    /* Estilos de la app */
+    /* Estilos propios de la app */
     .main-header {font-size: 2.5rem; color: #1E88E5; text-align: center; font-weight: bold;}
     .sub-header {font-size: 1.5rem; color: #0D47A1; font-weight: bold; border-bottom: 2px solid #1E88E5; padding-bottom: 5px;}
     .ticket-box {background-color: #F5F5F5; padding: 20px; border-radius: 10px; border: 1px dashed #757575;}
     
-    /* Ocultar el menú principal de opciones */
-    #MainMenu {visibility: hidden;}
-    /* Ocultar el pie de página de "Made with Streamlit" */
-    footer {visibility: hidden;}
-    /* Ocultar la cabecera completa, incluyendo GitHub y Fork */
+    /* 1. Ocultar cabeceras y pies de página */
     header {visibility: hidden !important; display: none !important;}
+    footer {visibility: hidden !important; display: none !important;}
     [data-testid="stHeader"] {display: none !important;}
+    [data-testid="stFooter"] {display: none !important;}
+    
+    /* 2. Ocultar el menú de los 3 puntitos y la barra superior */
+    #MainMenu {visibility: hidden !important; display: none !important;}
     [data-testid="stToolbar"] {display: none !important;}
-    /* Ocultar cualquier "botón flotante" extra de Streamlit Cloud */
+    
+    /* 3. Ocultar los botones flotantes de GitHub y Streamlit Cloud (los de abajo) */
+    .stDeployButton {display: none !important;}
     .viewerBadge_container {display: none !important;}
+    .viewerBadge_link {display: none !important;}
+    
+    /* 4. Borrado extremo de cualquier link que intente llevar a GitHub */
+    a[title="View source"] {display: none !important;}
+    a[title="Fork on GitHub"] {display: none !important;}
+    a[href*="github.com"] {display: none !important;}
     </style>
 """, unsafe_allow_html=True)
 
