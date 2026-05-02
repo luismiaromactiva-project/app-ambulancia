@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 
 # 1. CONFIGURACIÓN DE LA PÁGINA (Para que parezca una app nativa en el móvil)
-st.set_page_config(page_title="App de Revisión Ambulancias", page_icon="🚑", layout="centered")
+st.set_page_config(page_title="App de Nicole de Revisión Ambulancias", page_icon="🚑", layout="centered")
 
 # Estilo CSS personalizado para que los títulos destaquen más
 st.markdown("""
@@ -129,3 +129,21 @@ if st.button("✅ GENERAR INFORME DE REVISIÓN", type="primary", use_container_w
         mime="text/plain",
         use_container_width=True
     )
+    # --- OCULTAR MARCAS DE AGUA, MENÚS Y GITHUB ---
+    ocultar_menu_estilo = """
+        <style>
+        /* Ocultar el menú principal de opciones */
+        #MainMenu {visibility: hidden;}
+        /* Ocultar el pie de página de "Made with Streamlit" */
+        footer {visibility: hidden;}
+        /* Ocultar la cabecera completa, incluyendo GitHub y Fork */
+        header {visibility: hidden !important; display: none !important;}
+        [data-testid="stHeader"] {display: none !important;}
+        [data-testid="stToolbar"] {display: none !important;}
+        /* Ocultar cualquier "botón flotante" extra de Streamlit Cloud */
+        .viewerBadge_container {display: none !important;}
+        </style>
+    """
+    st.markdown(ocultar_menu_estilo, unsafe_allow_html=True)
+    # ----------------------------------------------
+
