@@ -4,12 +4,24 @@ import datetime
 # 1. CONFIGURACIÓN DE LA PÁGINA (Para que parezca una app nativa en el móvil)
 st.set_page_config(page_title="App de Nicole de Revisión Ambulancia", page_icon="🚑", layout="centered")
 
-# Estilo CSS personalizado para que los títulos destaquen más
+# --- ESTILOS CSS Y OCULTAR MARCAS DE AGUA / GITHUB ---
 st.markdown("""
     <style>
+    /* Estilos de la app */
     .main-header {font-size: 2.5rem; color: #1E88E5; text-align: center; font-weight: bold;}
     .sub-header {font-size: 1.5rem; color: #0D47A1; font-weight: bold; border-bottom: 2px solid #1E88E5; padding-bottom: 5px;}
     .ticket-box {background-color: #F5F5F5; padding: 20px; border-radius: 10px; border: 1px dashed #757575;}
+    
+    /* Ocultar el menú principal de opciones */
+    #MainMenu {visibility: hidden;}
+    /* Ocultar el pie de página de "Made with Streamlit" */
+    footer {visibility: hidden;}
+    /* Ocultar la cabecera completa, incluyendo GitHub y Fork */
+    header {visibility: hidden !important; display: none !important;}
+    [data-testid="stHeader"] {display: none !important;}
+    [data-testid="stToolbar"] {display: none !important;}
+    /* Ocultar cualquier "botón flotante" extra de Streamlit Cloud */
+    .viewerBadge_container {display: none !important;}
     </style>
 """, unsafe_allow_html=True)
 
