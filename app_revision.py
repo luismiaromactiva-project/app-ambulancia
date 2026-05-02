@@ -2,7 +2,7 @@ import streamlit as st
 import datetime
 
 # 1. CONFIGURACIÓN DE LA PÁGINA (Para que parezca una app nativa en el móvil)
-st.set_page_config(page_title="App de Nicole de Revisión Ambulancia", page_icon="🚑", layout="centered")
+st.set_page_config(page_title="App de Revisión Ambulancias", page_icon="🚑", layout="centered")
 
 # --- ESTILOS CSS Y OCULTAR MARCAS DE AGUA / GITHUB ---
 st.markdown("""
